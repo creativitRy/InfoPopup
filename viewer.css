@@ -1,0 +1,82 @@
+body {
+    font-family: 'Merriweather Sans', Arial, sans-serif;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.button {
+    background-color: #269aed;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #1145d4;
+    /*display:block;*/
+    height: 40px;
+    width: 40px;
+    margin-top: 5%;
+    /*margin: auto;*/
+    border-radius: 50%;
+    color: white;
+    /*text-align: center;*/
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    font-weight: bold;
+
+    animation-name: pulse;
+    animation-duration: 0.5s;
+    animation-iteration-count: 2;
+}
+
+.button:hover {
+    transform: scale(1.25);
+}
+
+#delete-on-click {
+    color: white;
+    font-size: 12px;
+    font-style: italic;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(51, 61, 71, 0.5);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+
+#popup.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+
+#popup-content {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    top: 3%;
+    left: 3%;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 1em;
+    text-align: center;
+}
